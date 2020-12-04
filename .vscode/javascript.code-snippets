@@ -19,7 +19,40 @@
 		"prefix": "rfunc",
 		"body": [
 			"import React from 'react'",
+			"import PropTypes from 'prop-types'\n\n",
+			"const ${1:CName} = (props) => {",
+			"\treturn (",
+			"\t\t<div className=\"$1\">",
+			"\t\t</div>",
+			"\t)",
+			"}\n\n",
+			"$1.propTypes = {",
+			"\t$2",
+			"}\n\n",
+			"export default $1"
 		],
 		"description": "Create React Functional Component"
+	},
+	"React Functional Component Receive data from props": {
+		"prefix": "rfunc",
+		"body": [
+			"import React, { useState, useEffect } from 'react'",
+			"import PropTypes from 'prop-types'\n\n",
+			"const ${1:CName} = ({ ${2:data}: _$2 }) => {\n",
+			"\tconst [$2, set${2:/capitalize}] = useState(() => _$2)\n",
+			"\tuseEffect(() => {",
+			"\t\tset${2:/capitalize}(_$2)",
+			"\t}, [_$2])\n",
+			"\treturn (",
+			"\t\t<div className=\"$1\">",
+			"\t\t</div>",
+			"\t)",
+			"}\n\n",
+			"$1.propTypes = {",
+			"$3",
+			"}\n\n",
+			"export default $1"
+		],
+		"description": "React Functional Component Receive data from props"
 	}
 }
