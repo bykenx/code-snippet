@@ -20,7 +20,7 @@
 		"body": [
 			"import React from 'react'",
 			"import PropTypes from 'prop-types'\n\n",
-			"const ${1:CName} = (props) => {",
+			"const ${1} = (props) => {",
 			"\treturn (",
 			"\t\t<div className=\"$1\">",
 			"\t\t</div>",
@@ -38,10 +38,10 @@
 		"body": [
 			"import React, { useState, useEffect } from 'react'",
 			"import PropTypes from 'prop-types'\n\n",
-			"const ${1:CName} = ({ ${2:data}: _$2 }) => {\n",
-			"\tconst [$2, set${2:/capitalize}] = useState(() => _$2)\n",
+			"const ${1} = ({ ${2}: _$2 }) => {\n",
+			"\tconst [$2, set${2/(.*)/${1:/capitalize}/}] = useState(() => _$2)\n",
 			"\tuseEffect(() => {",
-			"\t\tset${2:/capitalize}(_$2)",
+			"\t\tset${2/(.*)/${1:/capitalize}/}(_$2)",
 			"\t}, [_$2])\n",
 			"\treturn (",
 			"\t\t<div className=\"$1\">",
